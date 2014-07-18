@@ -72,18 +72,51 @@ article {
 
 .tricolumn {
   display: inline-block;
-  width: 230px;
   margin: 0;
+  width: 100%;
   vertical-align: top;
   text-align: left;
 }
 
-.tricolumn:nth-child(3n+2) {
-  margin: 0 80px;
+.tricolumn:nth-child(n+2) {
+  margin-top: 50px;
 }
 
-.tricolumn:nth-child(n+4) {
-  margin-top: 60px;
+@media (min-width: 510px) and (max-width: 899px) {
+  .tricolumn {
+    width: 49%;
+  }
+
+  /* reset the width from the single-column layout,
+   * which is not in a media query */
+  .tricolumn:nth-child(n+2) {
+    margin-top: 0;
+  }
+
+  .tricolumn:nth-child(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 900px) {
+  .tricolumn {
+    width: 230px;
+  }
+
+  /* reset single-column layout */
+  .tricolumn:nth-child(n+1) {
+    margin-top: 0;
+  }
+
+  /* spacing between items in the same row */
+  .tricolumn:nth-child(3n+2) {
+    margin: 0 80px;
+  }
+
+  /* spacing between rows */
+  .tricolumn:nth-child(n+4) {
+    margin-top: 60px;
+  }
 }
 
 .sectionheader {
@@ -140,12 +173,13 @@ article {
 }
 
 .navbar .navcontrol .navlinks {
-  margin-top: 38px;
+  margin-top: 19px;
 }
 @media (min-width: 480px) {
   .navbar .navcontrol .navlinks {
     float: right;
     height: 0;
+    margin-top: 38px;
     line-height: 0;
   }
 }
@@ -187,11 +221,28 @@ article {
 }
 
 .navbar .navcontrol .homelink {
-  float: left;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 40px;
   height: 40px;
   margin-top: 10px;
   background-image: url("images/top_logo.png");
+}
+@media (min-width: 480px) {
+  .navbar .navcontrol .homelink {
+    position: static;
+    float: left;
+    -webkit-transform: none;
+       -moz-transform: none;
+        -ms-transform: none;
+         -o-transform: none;
+            transform: none;
+  }
 }
 
 .navbar .navcontrol .homelink img {
@@ -230,6 +281,14 @@ article {
 
 .footer .footercontent .contactlinks {
   float: right;
+  padding-left: 7px;
+  border-left: #d0d2d1 1px solid;
+}
+@media (min-width: 360px) {
+  .footer .footercontent .contactlinks {
+    padding: 0;
+    border: none;
+  }
 }
 
 .footer .footercontent .contactlinks .contactblurb {
@@ -246,32 +305,37 @@ article {
   vertical-align: middle;
   margin: 0 0 0 20px;
 }
+.footer .footercontent .contactlinks .icons a:first-child figure {
+  margin-left: 0;
+}
 
 .footer .footercontent .contactlinks .icons a figure figcaption {
   display: none;
 }
 
-.footer .footercontent .contactlinks .icons a #email:hover figcaption {
-  position: absolute;
-  display: block;
-  left: -30px;
-  color: #1a9aa0;
-}
+@media (min-width: 400px) {
+  .footer .footercontent .contactlinks .icons a #email:hover figcaption {
+    position: absolute;
+    display: block;
+    left: -50px;
+    color: #1a9aa0;
+  }
 
-.footer .footercontent .contactlinks .icons a #facebook:hover figcaption {
-  position: absolute;
-  display: block;
-  left: -50px;
-  top: 5px;
-  color: #1a9aa0;
-}
+  .footer .footercontent .contactlinks .icons a #facebook:hover figcaption {
+    position: absolute;
+    display: block;
+    left: -70px;
+    top: 5px;
+    color: #1a9aa0;
+  }
 
-.footer .footercontent .contactlinks .icons a #dlist:hover figcaption {
-  position: absolute;
-  display: block;
-  left: -80px;
-  top: 6px;
-  color: #1a9aa0;
+  .footer .footercontent .contactlinks .icons a #dlist:hover figcaption {
+    position: absolute;
+    display: block;
+    left: -100px;
+    top: 6px;
+    color: #1a9aa0;
+  }
 }
 
 /*
