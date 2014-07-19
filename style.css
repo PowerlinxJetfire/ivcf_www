@@ -75,7 +75,7 @@ article {
   margin: 0;
   width: 100%;
   vertical-align: top;
-  text-align: left;
+  text-align: center;
 }
 
 .tricolumn:nth-child(n+2) {
@@ -480,6 +480,25 @@ article {
   color: #515151;
   width: 140px;
   margin: 0;
+}
+
+.smallgroup {
+  display: inline-block;
+  text-align: left;
+}
+@media (min-width: 900px) {
+  .smallgroup {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* in two-column layout with odd number of groups, keep
+ * last group from ending up awkwardly in the middle */
+@media (min-width: 510px) and (max-width: 899px) {
+  .groupspage .tricolumn:last-child:nth-child(2n + 1) {
+    margin-right: 50%;
+  }
 }
 
 /*
