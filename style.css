@@ -151,7 +151,7 @@ article {
   left: 0;
   width: 100%;
   background-color: white;
-  z-index: 10;
+  z-index: 1000;
 }
 @media (min-width: 480px) {
   .navbar {
@@ -520,8 +520,35 @@ article {
   color: #d3b9aa;
 }
 
+/* this and the next rule make the calendar change
+ * width based on the viewport, while maintaining
+ * aspect ratio */
 .eventspage .calendar {
+  position: relative;
+  height: 0;
+  padding-top: 56.25%;
   text-align: center;
+}
+
+.eventspage .calendar iframe {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.eventspage .tricolumn {
+  text-align: left;
+}
+
+@media (min-width: 510px) {
+  .eventspage .tricolumn p {
+    max-width: 230px;
+  }
 }
 
 /*
