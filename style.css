@@ -140,6 +140,15 @@ article {
   margin-left: 50px;
 }
 
+/* for when you want to force something like a heading to
+ * break a certain way (like Fellowships @ CMU in links.html)
+ */
+@media (min-width: 500px) {
+  .responsive-br {
+    display: none;
+  }
+}
+
 
 /*
 ###### NAVBAR ###################################
@@ -643,7 +652,11 @@ article {
   margin: 10px 0;
 }
 
-.linkspage .churches .tricolumn:nth-child(2) {
+.linkspage .tricolumn {
+  text-align: left;
+}
+
+.linkspage .churches .tricolumn {
   width: 275px;
 }
 
@@ -662,7 +675,7 @@ article {
 }
 
 /*
-###### LINKS PAGE ###################################
+###### FISHES PAGE ###################################
 */
 
 .fishespage a {
