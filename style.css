@@ -509,13 +509,21 @@ article {
   }
 }
 
-.smallgroup a {
+.smallgroup p {
+  max-width: 240px;
+  margin-top: .5em;
+}
+
+.groupspage a {
   text-decoration: underline;
-  white-space: nowrap;
   transition: color .1s;
 }
 
-.smallgroup a:hover {
+.smallgroup a {
+  white-space: nowrap;
+}
+
+.groupspage a:hover {
   color: #cf6436;
 }
 
